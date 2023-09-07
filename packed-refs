@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+d6ed153c79cf2578d33dc65158956e4cde73aae0 refs/remotes/origin/cache
+c461264801361e2d9f437aa986429b00f308b92d refs/remotes/origin/core-module
+5d681863fecf66f81c31ec0dd82736bc3009de02 refs/remotes/origin/custom-drawer
+7a91217d0b5374aa43722f197cd5f7107c81246d refs/remotes/origin/main
+67f50e7994340a2097f36216e2386880b39ffac3 refs/remotes/origin/update-main

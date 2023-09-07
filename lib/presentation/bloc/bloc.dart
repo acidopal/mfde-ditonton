@@ -1,0 +1,12 @@
+export 'search/search_bloc.dart';
+export 'movies/movies_bloc.dart';
+export 'movies/popular/popular_bloc.dart';
+export 'movies/top_rated/top_rated_bloc.dart';
+export 'movies/detail/movie_detail_bloc.dart';
+export 'movies/watchlist/movie_watchlist_bloc.dart';
+export 'tv/tv_bloc.dart';
+export 'tv/airing_today/airing_today_bloc.dart';
+export 'tv/popular/popular_tv_bloc.dart';
+export 'tv/top_rated/top_rated_tv_bloc.dart';
+export 'tv/detail/tv_detail_bloc.dart';
+export 'tv/watchlist/watchlist_tv_bloc.dart';
