@@ -73,7 +73,7 @@
 <span id="L11"><span class="lineNum">      11</span> <span class="tlaGNC tlaBgGNC">           1 :   List&lt;TVSeries&gt; get watchlistTVSeries =&gt;</span></span>
 <span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">           6 :       _watchlistTVSeries.where((element) =&gt; element.isMovie == 0).toList();</span></span>
 <span id="L13"><span class="lineNum">      13</span>              : </span>
-<span id="L14"><span class="lineNum">      14</span>              :   var _watchlistState = RequestState.Empty;</span>
+<span id="L14"><span class="lineNum">      14</span>              :   var _watchlistState = RequestState.empty;</span>
 <span id="L15"><span class="lineNum">      15</span>              : </span>
 <span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">           2 :   RequestState get watchlistState =&gt; _watchlistState;</span></span>
 <span id="L17"><span class="lineNum">      17</span>              : </span>
@@ -86,18 +86,18 @@
 <span id="L24"><span class="lineNum">      24</span>              :   final GetWatchlistTVSeries getWatchlistTVSeries;</span>
 <span id="L25"><span class="lineNum">      25</span>              : </span>
 <span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">           1 :   Future&lt;void&gt; fetchWatchlistTVSeries() async {</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           1 :     _watchlistState = RequestState.Loading;</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           1 :     _watchlistState = RequestState.loading;</span></span>
 <span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           1 :     notifyListeners();</span></span>
 <span id="L29"><span class="lineNum">      29</span>              : </span>
 <span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">           2 :     final result = await getWatchlistTVSeries.execute();</span></span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           1 :     result.fold(</span></span>
 <span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">           1 :       (failure) {</span></span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           1 :         _watchlistState = RequestState.Error;</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           1 :         _watchlistState = RequestState.error;</span></span>
 <span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           2 :         _message = failure.message;</span></span>
 <span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           1 :         notifyListeners();</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :       },</span>
 <span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">           1 :       (tvSeriesData) {</span></span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           1 :         _watchlistState = RequestState.Loaded;</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           1 :         _watchlistState = RequestState.loaded;</span></span>
 <span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           1 :         _watchlistTVSeries = tvSeriesData;</span></span>
 <span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">           1 :         notifyListeners();</span></span>
 <span id="L41"><span class="lineNum">      41</span>              :       },</span>

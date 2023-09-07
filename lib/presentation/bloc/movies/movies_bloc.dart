@@ -20,19 +20,19 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     required this.getTopRatedMovies,
   }) : super(MoviesState.initial()) {
     on<GetNowPlaying>((event, emit) async {
-      emit(state.copyWith(statusNowPlaying: RequestState.Loading));
+      emit(state.copyWith(statusNowPlaying: RequestState.loading));
       final result = await getNowPlayingMovies.execute();
 
       result.fold(
         (failure) {
           emit(state.copyWith(
-            statusNowPlaying: RequestState.Error,
+            statusNowPlaying: RequestState.error,
             failureMessage: failure.message,
           ));
         },
         (data) {
           emit(state.copyWith(
-            statusNowPlaying: RequestState.Loaded,
+            statusNowPlaying: RequestState.loaded,
             resultNowPlaying: data,
           ));
         },
@@ -40,19 +40,19 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     });
 
     on<GetPopular>((event, emit) async {
-      emit(state.copyWith(statusPopular: RequestState.Loading));
+      emit(state.copyWith(statusPopular: RequestState.loading));
       final result = await getPopularMovies.execute();
 
       result.fold(
         (failure) {
           emit(state.copyWith(
-            statusPopular: RequestState.Error,
+            statusPopular: RequestState.error,
             failureMessage: failure.message,
           ));
         },
         (data) {
           emit(state.copyWith(
-            statusPopular: RequestState.Loaded,
+            statusPopular: RequestState.loaded,
             resultPopular: data,
           ));
         },
@@ -60,19 +60,19 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     });
 
     on<GetTopRated>((event, emit) async {
-      emit(state.copyWith(statusTopRated: RequestState.Loading));
+      emit(state.copyWith(statusTopRated: RequestState.loading));
       final result = await getTopRatedMovies.execute();
 
       result.fold(
         (failure) {
           emit(state.copyWith(
-            statusTopRated: RequestState.Error,
+            statusTopRated: RequestState.error,
             failureMessage: failure.message,
           ));
         },
         (data) {
           emit(state.copyWith(
-            statusTopRated: RequestState.Loaded,
+            statusTopRated: RequestState.loaded,
             resultTopRated: data,
           ));
         },

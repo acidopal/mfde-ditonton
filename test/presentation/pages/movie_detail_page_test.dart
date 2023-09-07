@@ -32,8 +32,8 @@ void main() {
       'Watchlist button should display add icon when movie not added to watchlist',
       (WidgetTester tester) async {
     final initialState = MovieDetailState.initial().copyWith(
-      statusDetail: RequestState.Loaded,
-      statusRecommendation: RequestState.Loaded,
+      statusDetail: RequestState.loaded,
+      statusRecommendation: RequestState.loaded,
       movie: testMovieDetail,
       movieRecommendation: testMovieList,
     );
@@ -52,8 +52,8 @@ void main() {
       'Watchlist button should dispay check icon when movie is added to wathclist',
       (WidgetTester tester) async {
     final initialState = MovieDetailState.initial().copyWith(
-        statusDetail: RequestState.Loaded,
-        statusRecommendation: RequestState.Loaded,
+        statusDetail: RequestState.loaded,
+        statusRecommendation: RequestState.loaded,
         movie: testMovieDetail,
         movieRecommendation: testMovieList,
         isAddedToWatchlist: true);
@@ -72,8 +72,8 @@ void main() {
       'Watchlist button should display Snackbar when added to watchlist',
       (WidgetTester tester) async {
     final initialState = MovieDetailState.initial().copyWith(
-        statusDetail: RequestState.Loaded,
-        statusRecommendation: RequestState.Loaded,
+        statusDetail: RequestState.loaded,
+        statusRecommendation: RequestState.loaded,
         movie: testMovieDetail,
         movieRecommendation: testMovieList,
         isAddedToWatchlist: false,
@@ -99,8 +99,8 @@ void main() {
       'Watchlist button should display AlertDialog when add to watchlist failed',
       (WidgetTester tester) async {
     final initialState = MovieDetailState.initial().copyWith(
-        statusDetail: RequestState.Loaded,
-        statusRecommendation: RequestState.Loaded,
+        statusDetail: RequestState.loaded,
+        statusRecommendation: RequestState.loaded,
         movie: testMovieDetail,
         movieRecommendation: testMovieList,
         isAddedToWatchlist: false,

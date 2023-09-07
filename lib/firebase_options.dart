@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -49,21 +46,31 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyB7Fi3MqMDfOh-HuLTeJIBNqcMzlvKzkUM',
+    appId: '1:607625750476:web:91b2a75a26853ece789f69',
+    messagingSenderId: '607625750476',
+    projectId: 'mfde-ditonton',
+    authDomain: 'mfde-ditonton.firebaseapp.com',
+    storageBucket: 'mfde-ditonton.appspot.com',
+    measurementId: 'G-T0NH5MQ2DM',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDkU6aNdvXW7DtJR81ilO8Wuiq4umiEhXs',
-    appId: '1:796484577439:android:cb91a4903dcd7af5255aaa',
-    messagingSenderId: '796484577439',
-    projectId: 'test-project-10115',
-    storageBucket: 'test-project-10115.appspot.com',
+    apiKey: 'AIzaSyCxXrwlde68bueaG_YafT20F7qCrFMRCBU',
+    appId: '1:607625750476:android:3f5bd27281409f1f789f69',
+    messagingSenderId: '607625750476',
+    projectId: 'mfde-ditonton',
+    storageBucket: 'mfde-ditonton.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAAXVjqHvJI8FrriMg6mmXwCU8eLasxKkw',
-    appId: '1:796484577439:ios:a027e6e2a4fd387f255aaa',
-    messagingSenderId: '796484577439',
-    projectId: 'test-project-10115',
-    storageBucket: 'test-project-10115.appspot.com',
-    iosClientId: '796484577439-d4ggem50lk1at6tt5h1omch9jt6r2as4.apps.googleusercontent.com',
+    apiKey: 'AIzaSyD3LAH-UjBbuija0-7xV1f5X2CPVaPKw-g',
+    appId: '1:607625750476:ios:b722f86ce570b873789f69',
+    messagingSenderId: '607625750476',
+    projectId: 'mfde-ditonton',
+    storageBucket: 'mfde-ditonton.appspot.com',
+    iosClientId: '607625750476-1svipsv4p83ngalukt90scqhfuc7509n.apps.googleusercontent.com',
     iosBundleId: 'com.dicoding.ditonton',
   );
 }

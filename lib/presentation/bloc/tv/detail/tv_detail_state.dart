@@ -13,8 +13,8 @@ class TVSeriesDetailState extends Equatable {
 
   factory TVSeriesDetailState.initial() {
     return TVSeriesDetailState(
-      statusDetail: RequestState.Empty,
-      statusRecommendation: RequestState.Empty,
+      statusDetail: RequestState.empty,
+      statusRecommendation: RequestState.empty,
       tvSeries: null,
       tvSeriesRecommendation: [],
       isAddedToWatchlist: false,

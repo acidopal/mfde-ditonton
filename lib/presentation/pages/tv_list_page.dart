@@ -59,13 +59,13 @@ class _TVListPageState extends State<TVListPage> {
                     context, AiringTodayTVSeriesPage.ROUTE_NAME),
               ),
               BlocBuilder<TVBloc, TVState>(builder: (context, state) {
-                if (state.statusAiringToday == RequestState.Loading) {
+                if (state.statusAiringToday == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state.statusAiringToday == RequestState.Loaded) {
+                } else if (state.statusAiringToday == RequestState.loaded) {
                   return TVSeriesList(state.resultAiringToday);
-                } else if (state.statusAiringToday == RequestState.Error) {
+                } else if (state.statusAiringToday == RequestState.error) {
                   return Text(state.failureMessage ?? 'failure');
                 } else {
                   return Text('');
@@ -77,13 +77,13 @@ class _TVListPageState extends State<TVListPage> {
                     context, PopularTVSeriesPage.ROUTE_NAME),
               ),
               BlocBuilder<TVBloc, TVState>(builder: (context, state) {
-                if (state.statusPopular == RequestState.Loading) {
+                if (state.statusPopular == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state.statusPopular == RequestState.Loaded) {
+                } else if (state.statusPopular == RequestState.loaded) {
                   return TVSeriesList(state.resultPopular);
-                } else if (state.statusPopular == RequestState.Error) {
+                } else if (state.statusPopular == RequestState.error) {
                   return Text(state.failureMessage ?? 'failure');
                 } else {
                   return Text('');
@@ -95,13 +95,13 @@ class _TVListPageState extends State<TVListPage> {
                     context, TopRatedTVSeriesPage.ROUTE_NAME),
               ),
               BlocBuilder<TVBloc, TVState>(builder: (context, state) {
-                if (state.statusTopRated == RequestState.Loading) {
+                if (state.statusTopRated == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state.statusTopRated == RequestState.Loaded) {
+                } else if (state.statusTopRated == RequestState.loaded) {
                   return TVSeriesList(state.resultTopRated);
-                } else if (state.statusTopRated == RequestState.Error) {
+                } else if (state.statusTopRated == RequestState.error) {
                   return Text(state.failureMessage ?? 'failure');
                 } else {
                   return Text('');

@@ -106,13 +106,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 style: kHeading6,
               ),
               BlocBuilder<MoviesBloc, MoviesState>(builder: (context, state) {
-                if (state.statusNowPlaying == RequestState.Loading) {
+                if (state.statusNowPlaying == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state.statusNowPlaying == RequestState.Loaded) {
+                } else if (state.statusNowPlaying == RequestState.loaded) {
                   return MovieList(state.resultNowPlaying);
-                } else if (state.statusNowPlaying == RequestState.Error) {
+                } else if (state.statusNowPlaying == RequestState.error) {
                   return Text(state.failureMessage ?? 'failure');
                 } else {
                   return Text('');
@@ -124,13 +124,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                     Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
               ),
               BlocBuilder<MoviesBloc, MoviesState>(builder: (context, state) {
-                if (state.statusPopular == RequestState.Loading) {
+                if (state.statusPopular == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state.statusPopular == RequestState.Loaded) {
+                } else if (state.statusPopular == RequestState.loaded) {
                   return MovieList(state.resultPopular);
-                } else if (state.statusPopular == RequestState.Error) {
+                } else if (state.statusPopular == RequestState.error) {
                   return Text(state.failureMessage ?? 'failure');
                 } else {
                   return Text('');
@@ -142,13 +142,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                     Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
               ),
               BlocBuilder<MoviesBloc, MoviesState>(builder: (context, state) {
-                if (state.statusTopRated == RequestState.Loading) {
+                if (state.statusTopRated == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state.statusTopRated == RequestState.Loaded) {
+                } else if (state.statusTopRated == RequestState.loaded) {
                   return MovieList(state.resultTopRated);
-                } else if (state.statusTopRated == RequestState.Error) {
+                } else if (state.statusTopRated == RequestState.error) {
                   return Text(state.failureMessage ?? 'failure');
                 } else {
                   return Text('');

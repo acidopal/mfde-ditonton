@@ -65,11 +65,11 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       moviesBloc.state.copyWith(
-        statusNowPlaying: RequestState.Loading,
+        statusNowPlaying: RequestState.loading,
         resultNowPlaying: []
       ),
       moviesBloc.state.copyWith(
-        statusNowPlaying: RequestState.Loaded,
+        statusNowPlaying: RequestState.loaded,
         resultNowPlaying: tMovieList,
       ),
     ],
@@ -89,11 +89,11 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       moviesBloc.state.copyWith(
-          statusNowPlaying: RequestState.Loading,
+          statusNowPlaying: RequestState.loading,
         failureMessage: null,
       ),
       moviesBloc.state.copyWith(
-        statusNowPlaying: RequestState.Error,
+        statusNowPlaying: RequestState.error,
         failureMessage: 'Server Failure',
       ),
     ],
@@ -114,11 +114,11 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       moviesBloc.state.copyWith(
-          statusPopular: RequestState.Loading,
+          statusPopular: RequestState.loading,
           resultPopular: []
       ),
       moviesBloc.state.copyWith(
-        statusPopular: RequestState.Loaded,
+        statusPopular: RequestState.loaded,
         resultPopular: tMovieList,
       ),
     ],
@@ -138,11 +138,11 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       moviesBloc.state.copyWith(
-        statusPopular: RequestState.Loading,
+        statusPopular: RequestState.loading,
         failureMessage: null,
       ),
       moviesBloc.state.copyWith(
-        statusPopular: RequestState.Error,
+        statusPopular: RequestState.error,
         failureMessage: 'Server Failure',
       ),
     ],
@@ -163,11 +163,11 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       moviesBloc.state.copyWith(
-          statusTopRated: RequestState.Loading,
+          statusTopRated: RequestState.loading,
           resultTopRated: []
       ),
       moviesBloc.state.copyWith(
-        statusTopRated: RequestState.Loaded,
+        statusTopRated: RequestState.loaded,
         resultTopRated: tMovieList,
       ),
     ],
@@ -187,11 +187,11 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       moviesBloc.state.copyWith(
-        statusTopRated: RequestState.Loading,
+        statusTopRated: RequestState.loading,
         failureMessage: null,
       ),
       moviesBloc.state.copyWith(
-        statusTopRated: RequestState.Error,
+        statusTopRated: RequestState.error,
         failureMessage: 'Server Failure',
       ),
     ],

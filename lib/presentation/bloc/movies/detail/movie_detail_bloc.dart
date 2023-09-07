@@ -33,33 +33,33 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
     on<OnResetState>((event, emit) => emit(MovieDetailState.initial()));
 
     on<OnFetchDetailMovie>((event, emit) async {
-      emit(state.copyWith(statusDetail: RequestState.Loading));
+      emit(state.copyWith(statusDetail: RequestState.loading));
       final result = await getDetailMovie.execute(event.id);
       final resultRecommendation = await getRecommendation.execute(event.id);
 
       result.fold(
         (failure) {
           emit(state.copyWith(
-            statusDetail: RequestState.Error,
+            statusDetail: RequestState.error,
             failureMessage: failure.message,
           ));
         },
         (data) {
           emit(state.copyWith(
-            statusRecommendation: RequestState.Loading,
+            statusRecommendation: RequestState.loading,
             movie: data,
           ));
           resultRecommendation.fold(
             (failure) {
               emit(state.copyWith(
-                statusRecommendation: RequestState.Error,
+                statusRecommendation: RequestState.error,
                 failureMessage: failure.message,
               ));
             },
             (recommendations) {
               emit(state.copyWith(
-                statusRecommendation: RequestState.Loaded,
-                statusDetail: RequestState.Loaded,
+                statusRecommendation: RequestState.loaded,
+                statusDetail: RequestState.loaded,
                 movieRecommendation: recommendations,
               ));
             },

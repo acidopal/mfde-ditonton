@@ -95,33 +95,33 @@
 <span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           1 :     on&lt;OnResetState&gt;((event, emit) =&gt; emit(MovieDetailState.initial()));</span></span>
 <span id="L34"><span class="lineNum">      34</span>              : </span>
 <span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           2 :     on&lt;OnFetchDetailMovie&gt;((event, emit) async {</span></span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">           3 :       emit(state.copyWith(statusDetail: RequestState.Loading));</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">           3 :       emit(state.copyWith(statusDetail: RequestState.loading));</span></span>
 <span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">           3 :       final result = await getDetailMovie.execute(event.id);</span></span>
 <span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           3 :       final resultRecommendation = await getRecommendation.execute(event.id);</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : </span>
 <span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">           1 :       result.fold(</span></span>
 <span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           1 :         (failure) {</span></span>
 <span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">           3 :           emit(state.copyWith(</span></span>
-<span id="L43"><span class="lineNum">      43</span>              :             statusDetail: RequestState.Error,</span>
+<span id="L43"><span class="lineNum">      43</span>              :             statusDetail: RequestState.error,</span>
 <span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">           1 :             failureMessage: failure.message,</span></span>
 <span id="L45"><span class="lineNum">      45</span>              :           ));</span>
 <span id="L46"><span class="lineNum">      46</span>              :         },</span>
 <span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">           1 :         (data) {</span></span>
 <span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           3 :           emit(state.copyWith(</span></span>
-<span id="L49"><span class="lineNum">      49</span>              :             statusRecommendation: RequestState.Loading,</span>
+<span id="L49"><span class="lineNum">      49</span>              :             statusRecommendation: RequestState.loading,</span>
 <span id="L50"><span class="lineNum">      50</span>              :             movie: data,</span>
 <span id="L51"><span class="lineNum">      51</span>              :           ));</span>
 <span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">           1 :           resultRecommendation.fold(</span></span>
 <span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">           1 :             (failure) {</span></span>
 <span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">           3 :               emit(state.copyWith(</span></span>
-<span id="L55"><span class="lineNum">      55</span>              :                 statusRecommendation: RequestState.Error,</span>
+<span id="L55"><span class="lineNum">      55</span>              :                 statusRecommendation: RequestState.error,</span>
 <span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">           1 :                 failureMessage: failure.message,</span></span>
 <span id="L57"><span class="lineNum">      57</span>              :               ));</span>
 <span id="L58"><span class="lineNum">      58</span>              :             },</span>
 <span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">           1 :             (recommendations) {</span></span>
 <span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">           3 :               emit(state.copyWith(</span></span>
-<span id="L61"><span class="lineNum">      61</span>              :                 statusRecommendation: RequestState.Loaded,</span>
-<span id="L62"><span class="lineNum">      62</span>              :                 statusDetail: RequestState.Loaded,</span>
+<span id="L61"><span class="lineNum">      61</span>              :                 statusRecommendation: RequestState.loaded,</span>
+<span id="L62"><span class="lineNum">      62</span>              :                 statusDetail: RequestState.loaded,</span>
 <span id="L63"><span class="lineNum">      63</span>              :                 movieRecommendation: recommendations,</span>
 <span id="L64"><span class="lineNum">      64</span>              :               ));</span>
 <span id="L65"><span class="lineNum">      65</span>              :             },</span>

@@ -13,9 +13,9 @@ class TVState extends Equatable {
 
   factory TVState.initial() {
     return const TVState(
-      statusAiringToday: RequestState.Empty,
-      statusPopular: RequestState.Empty,
-      statusTopRated: RequestState.Empty,
+      statusAiringToday: RequestState.empty,
+      statusPopular: RequestState.empty,
+      statusTopRated: RequestState.empty,
       resultAiringToday: [],
       resultPopular: [],
       resultTopRated: [],

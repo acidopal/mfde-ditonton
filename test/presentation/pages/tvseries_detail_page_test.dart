@@ -34,8 +34,8 @@ void main() {
       (WidgetTester tester) async {
 
     final initialState = TVSeriesDetailState.initial().copyWith(
-      statusDetail: RequestState.Loaded,
-      statusRecommendation: RequestState.Loaded,
+      statusDetail: RequestState.loaded,
+      statusRecommendation: RequestState.loaded,
       tvSeries: testTVSeriesDetail,
       tvSeriesRecommendation: testTVSeriesList,
       isAddedToWatchlist: false,
@@ -57,8 +57,8 @@ void main() {
       (WidgetTester tester) async {
 
     final initialState = TVSeriesDetailState.initial().copyWith(
-      statusDetail: RequestState.Loaded,
-      statusRecommendation: RequestState.Loaded,
+      statusDetail: RequestState.loaded,
+      statusRecommendation: RequestState.loaded,
       tvSeries: testTVSeriesDetail,
       tvSeriesRecommendation: testTVSeriesList,
       isAddedToWatchlist: true,
@@ -80,8 +80,8 @@ void main() {
       (WidgetTester tester) async {
 
     final initialState = TVSeriesDetailState.initial().copyWith(
-        statusDetail: RequestState.Loaded,
-        statusRecommendation: RequestState.Loaded,
+        statusDetail: RequestState.loaded,
+        statusRecommendation: RequestState.loaded,
         tvSeries: testTVSeriesDetail,
         tvSeriesRecommendation: testTVSeriesList,
         isAddedToWatchlist: false,
@@ -109,8 +109,8 @@ void main() {
       (WidgetTester tester) async {
 
     final initialState = TVSeriesDetailState.initial().copyWith(
-      statusDetail: RequestState.Loaded,
-      statusRecommendation: RequestState.Loaded,
+      statusDetail: RequestState.loaded,
+      statusRecommendation: RequestState.loaded,
       tvSeries: testTVSeriesDetail,
       tvSeriesRecommendation: testTVSeriesList,
       isAddedToWatchlist: false,

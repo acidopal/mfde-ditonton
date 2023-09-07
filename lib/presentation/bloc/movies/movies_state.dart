@@ -2,9 +2,9 @@ part of 'movies_bloc.dart';
 
 class MoviesState extends Equatable {
   const MoviesState({
-    this.statusNowPlaying = RequestState.Empty,
-    this.statusPopular = RequestState.Empty,
-    this.statusTopRated = RequestState.Empty,
+    this.statusNowPlaying = RequestState.empty,
+    this.statusPopular = RequestState.empty,
+    this.statusTopRated = RequestState.empty,
     this.resultNowPlaying = const [],
     this.resultPopular = const [],
     this.resultTopRated = const [],

@@ -63,10 +63,10 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVState.initial().copyWith(
-          statusAiringToday: RequestState.Loading,
+          statusAiringToday: RequestState.loading,
       ),
       tvBloc.state.copyWith(
-        statusAiringToday: RequestState.Loaded,
+        statusAiringToday: RequestState.loaded,
         resultAiringToday: tTVSeriesList,
       ),
     ],
@@ -86,10 +86,10 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVState.initial().copyWith(
-        statusAiringToday: RequestState.Loading,
+        statusAiringToday: RequestState.loading,
       ),
       tvBloc.state.copyWith(
-        statusAiringToday: RequestState.Error,
+        statusAiringToday: RequestState.error,
         failureMessage: 'Server Failure',
       ),
     ],
@@ -110,10 +110,10 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVState.initial().copyWith(
-          statusPopular: RequestState.Loading,
+          statusPopular: RequestState.loading,
       ),
       tvBloc.state.copyWith(
-        statusPopular: RequestState.Loaded,
+        statusPopular: RequestState.loaded,
         resultPopular: tTVSeriesList,
       ),
     ],
@@ -133,10 +133,10 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVState.initial().copyWith(
-        statusPopular: RequestState.Loading,
+        statusPopular: RequestState.loading,
       ),
       tvBloc.state.copyWith(
-        statusPopular: RequestState.Error,
+        statusPopular: RequestState.error,
         failureMessage: 'Server Failure',
       ),
     ],
@@ -157,10 +157,10 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVState.initial().copyWith(
-          statusTopRated: RequestState.Loading,
+          statusTopRated: RequestState.loading,
       ),
       tvBloc.state.copyWith(
-        statusTopRated: RequestState.Loaded,
+        statusTopRated: RequestState.loaded,
         resultTopRated: tTVSeriesList,
       ),
     ],
@@ -180,10 +180,10 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVState.initial().copyWith(
-        statusTopRated: RequestState.Loading,
+        statusTopRated: RequestState.loading,
       ),
       tvBloc.state.copyWith(
-        statusTopRated: RequestState.Error,
+        statusTopRated: RequestState.error,
         failureMessage: 'Server Failure',
       ),
     ],

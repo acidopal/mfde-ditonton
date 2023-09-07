@@ -44,11 +44,11 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
     return Scaffold(
       body: BlocConsumer<MovieDetailBloc, MovieDetailState>(
         builder: (context, state) {
-          if (state.statusDetail == RequestState.Loading) {
+          if (state.statusDetail == RequestState.loading) {
             return Center(
               child: CircularProgressIndicator(),
             );
-          } else if (state.statusDetail == RequestState.Loaded) {
+          } else if (state.statusDetail == RequestState.loaded) {
             final movie = state.movie;
             return SafeArea(
               child: DetailContent(
@@ -191,16 +191,16 @@ class DetailContent extends StatelessWidget {
                             BlocBuilder<MovieDetailBloc, MovieDetailState>(
                               builder: (context, state) {
                                 if (state.statusRecommendation ==
-                                    RequestState.Loading) {
+                                    RequestState.loading) {
                                   return Center(
                                     child: CircularProgressIndicator(),
                                   );
                                 } else if (state.statusRecommendation ==
-                                    RequestState.Error) {
+                                    RequestState.error) {
                                   return Text(
                                       state.failureMessage ?? 'failure');
                                 } else if (state.statusRecommendation ==
-                                    RequestState.Loaded) {
+                                    RequestState.loaded) {
                                   return Container(
                                     height: 150,
                                     child: ListView.builder(

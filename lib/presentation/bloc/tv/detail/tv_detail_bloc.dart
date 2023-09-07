@@ -34,33 +34,33 @@ class TVSeriesDetailBloc extends Bloc<TVSeriesDetailEvent, TVSeriesDetailState> 
     on<OnResetStateTVSeries>((event, emit) => emit(TVSeriesDetailState.initial()));
 
     on<OnFetchDetailTVSeries>((event, emit) async {
-      emit(state.copyWith(statusDetail: RequestState.Loading));
+      emit(state.copyWith(statusDetail: RequestState.loading));
       final result = await getTVSeriesDetail.execute(event.id);
       final resultRecommendation = await getTVSeriesRecommendations.execute(event.id);
 
       result.fold(
             (failure) {
           emit(state.copyWith(
-            statusDetail: RequestState.Error,
+            statusDetail: RequestState.error,
             failureMessage: failure.message,
           ));
         },
             (data) {
           emit(state.copyWith(
-            statusRecommendation: RequestState.Loading,
+            statusRecommendation: RequestState.loading,
             tvSeries: data,
           ));
           resultRecommendation.fold(
                 (failure) {
               emit(state.copyWith(
-                statusRecommendation: RequestState.Error,
+                statusRecommendation: RequestState.error,
                 failureMessage: failure.message,
               ));
             },
                 (recommendations) {
               emit(state.copyWith(
-                statusRecommendation: RequestState.Loaded,
-                statusDetail: RequestState.Loaded,
+                statusRecommendation: RequestState.loaded,
+                statusDetail: RequestState.loaded,
                 tvSeriesRecommendation: recommendations,
               ));
             },

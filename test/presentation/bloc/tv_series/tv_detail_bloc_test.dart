@@ -81,17 +81,17 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVSeriesDetailState.initial().copyWith(
-        statusDetail: RequestState.Loading,
+        statusDetail: RequestState.loading,
       ),
       tvSeriesDetailBloc.state.copyWith(
-        statusDetail: RequestState.Loading,
-        statusRecommendation: RequestState.Loading,
+        statusDetail: RequestState.loading,
+        statusRecommendation: RequestState.loading,
         tvSeries: testTVSeriesDetail,
         tvSeriesRecommendation: [],
       ),
       tvSeriesDetailBloc.state.copyWith(
-        statusDetail: RequestState.Loaded,
-        statusRecommendation: RequestState.Loaded,
+        statusDetail: RequestState.loaded,
+        statusRecommendation: RequestState.loaded,
         tvSeriesRecommendation: tTVSeriesList,
         tvSeries: null,
       ),
@@ -115,11 +115,11 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVSeriesDetailState.initial().copyWith(
-        statusDetail: RequestState.Loading,
+        statusDetail: RequestState.loading,
       ),
       tvSeriesDetailBloc.state.copyWith(
-          statusDetail: RequestState.Error,
-          statusRecommendation: RequestState.Empty,
+          statusDetail: RequestState.error,
+          statusRecommendation: RequestState.empty,
           failureMessage: 'Server Failure'),
     ],
     verify: (bloc) {
@@ -141,16 +141,16 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       TVSeriesDetailState.initial().copyWith(
-        statusDetail: RequestState.Loading,
+        statusDetail: RequestState.loading,
       ),
       TVSeriesDetailState.initial().copyWith(
-        statusDetail: RequestState.Loading,
-        statusRecommendation: RequestState.Loading,
+        statusDetail: RequestState.loading,
+        statusRecommendation: RequestState.loading,
         tvSeries: testTVSeriesDetail,
       ),
       tvSeriesDetailBloc.state.copyWith(
-          statusDetail: RequestState.Loading,
-          statusRecommendation: RequestState.Error,
+          statusDetail: RequestState.loading,
+          statusRecommendation: RequestState.error,
           failureMessage: 'Server Failure'),
     ],
     verify: (bloc) {
